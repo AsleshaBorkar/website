@@ -19,7 +19,7 @@ pipeline {
         stage("Deploy Container"){
             steps {
               echo "Deploying container"
-                sh " docker compose up -d --build"
+                sh "docker compose down && docker compose up -d --build"
                  echo "Deployment is done!"
             }
         }
